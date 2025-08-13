@@ -2,10 +2,12 @@
 FROM node:18.16
 
 # PERINTAH YANG DIJALANKAN SAAT CREATE IMAGE
-RUN apt update -y && npm install
+RUN apt update -y
 
 # COPY SOURCE KE IMAGE
 ADD . /app
+
+RUN cd /app && npm install
 
 # MAINTAINER IMAGE
 LABEL email="mat0441@gmail.com"
