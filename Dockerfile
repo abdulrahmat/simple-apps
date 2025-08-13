@@ -1,13 +1,14 @@
 # MENENTUKAN IMAGE DASAR
 FROM node:18.16
 
-# PERINTAH YANG DIJALANKAN SAAT CREATE IMAGE
-RUN apt update -y
+# WORKDIR
+WORKDIR /app
 
 # COPY SOURCE KE IMAGE
 ADD . /app
 
-RUN cd /app && npm install
+# PERINTAH YANG DIJALANKAN SAAT CREATE IMAGE
+RUN apt update -y && npm install
 
 # MAINTAINER IMAGE
 LABEL email="mat0441@gmail.com"
